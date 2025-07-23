@@ -31,7 +31,8 @@
         {{-- HISTORY --}}
         <div class="bg-gray-100 p-6 rounded-2xl shadow-md">
             <h3 class="text-xl font-semibold mb-4 text-gray-800">🎁 Log Pemenang</h3>
-            <div class="border rounded p-4 max-h-64 overflow-y-auto bg-white" id="winnerLog">
+            <div class="border rounded px-4 py-2 max-h-[300px] overflow-y-auto bg-white scrollbar-thin scrollbar-thumb-red-400 scrollbar-track-red-100" id="winnerLog">
+
                 @forelse ($winners as $winner)
                     <div class="mb-2 text-gray-800">🎉 {{ $winner->nomor_undian }}</div>
                 @empty
