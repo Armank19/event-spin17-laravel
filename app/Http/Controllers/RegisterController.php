@@ -13,7 +13,7 @@ class RegisterController extends Controller
         return view('register');
     }
 
-    public function store(Request $request)
+    public function submit(Request $request)
 {
     $request->validate([
         'nama' => 'required|string|max:255|unique:peserta,nama',
