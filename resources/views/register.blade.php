@@ -34,10 +34,7 @@
 <div id="alertBox" class="bg-yellow-100 border border-yellow-400 text-yellow-800 px-6 py-4 rounded relative mb-6 shadow-md">
     <strong class="font-bold">⚠️ Perhatian:</strong>
     <span class="block sm:inline ml-2">Silakan screenshot atau foto kupon Anda untuk tiket check-in onsite.</span>
-    <button onclick="document.getElementById('alertBox').style.display='none'"
-        class="absolute top-0 bottom-0 right-0 px-4 py-2 text-yellow-800 font-semibold hover:bg-yellow-200 rounded-r">
-        Mengerti
-    </button>
+    
 </div>
 
   <div class="w-full max-w-md bg-white p-6 rounded-2xl shadow-2xl border-2 border-red-200">
