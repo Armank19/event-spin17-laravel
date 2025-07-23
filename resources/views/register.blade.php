@@ -32,7 +32,7 @@
 
   <div class="w-full max-w-md bg-white p-6 rounded-2xl shadow-2xl border-2 border-red-200">
     <h1 class="text-3xl font-bold text-center text-red-700 mb-4">Pendaftaran Acara 17 Agustus 2025</h1>
-    <form method="POST" action="{{ route('register.submit') }}" class="space-y-4">
+    <form method="POST" action="{{ route('register.store') }}" class="space-y-4">
       @csrf
 
       <div>
