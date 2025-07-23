@@ -16,13 +16,12 @@
         </button>
     </div>
 
-    <div class="overflow-x-auto bg-white shadow-md rounded-lg">
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+    <div class="overflow-x-auto">
         <table class="min-w-full divide-y divide-gray-200">
-            <thead class="bg-red-700 text-white">
+            <thead class="bg-red-700 text-white sticky top-0 z-10">
                 <tr>
-                    <th class="px-4 py-3">
-                        <input type="checkbox" id="checkAll" class="hidden" onclick="checkAll(this)">
-                    </th>
+                    <th class="px-4 py-3"><input type="checkbox" id="checkAll" class="hidden" onclick="checkAll(this)"></th>
                     <th class="px-4 py-3 text-left text-sm font-semibold uppercase">No</th>
                     <th class="px-4 py-3 text-left text-sm font-semibold uppercase">Nama</th>
                     <th class="px-4 py-3 text-left text-sm font-semibold uppercase">ID Karyawan</th>
@@ -32,36 +31,44 @@
                     <th class="px-4 py-3 text-center text-sm font-semibold uppercase">Nomor Undian</th>
                 </tr>
             </thead>
-            <tbody class="bg-white divide-y divide-gray-100">
-                @forelse ($peserta as $index => $data)
-                    <tr class="hover:bg-gray-50 transition">
-                        <td class="px-4 py-2 text-center">
-                            <input type="checkbox" name="ids[]" value="{{ $data->id }}" class="checkbox-row hidden">
-                        </td>
-                        <td class="px-4 py-2 text-sm">{{ $index + 1 }}</td>
-                        <td class="px-4 py-2 text-sm font-medium text-gray-800">{{ $data->nama }}</td>
-                        <td class="px-4 py-2 text-sm">{{ $data->id_karyawan }}</td>
-                        <td class="px-4 py-2 text-sm">{{ $data->email }}</td>
-                        <td class="px-4 py-2 text-sm">{{ $data->no_wa }}</td>
-                        <td class="px-4 py-2 text-center">
-                            @if ($data->status_checkin)
-                                <span class="inline-flex items-center px-2 py-1 text-sm font-semibold text-green-800 bg-green-100 rounded-full">✅</span>
-                            @else
-                                <span class="inline-flex items-center px-2 py-1 text-sm font-semibold text-red-800 bg-red-100 rounded-full">❌</span>
-                            @endif
-                        </td>
-                        <td class="px-4 py-2 text-center text-sm">
-                            {{ $data->nomor_undian ?? '-' }}
-                        </td>
-                    </tr>
-                @empty
-                    <tr>
-                        <td colspan="8" class="text-center py-6 text-gray-500">Belum ada peserta terdaftar</td>
-                    </tr>
-                @endforelse
-            </tbody>
         </table>
+
+        <!-- Scrollable body -->
+        <div class="max-h-[500px] overflow-y-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <tbody class="bg-white divide-y divide-gray-100">
+                    @forelse ($peserta as $index => $data)
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="px-4 py-2 text-center">
+                                <input type="checkbox" name="ids[]" value="{{ $data->id }}" class="checkbox-row hidden">
+                            </td>
+                            <td class="px-4 py-2 text-sm">{{ $index + 1 }}</td>
+                            <td class="px-4 py-2 text-sm font-medium text-gray-800">{{ $data->nama }}</td>
+                            <td class="px-4 py-2 text-sm">{{ $data->id_karyawan }}</td>
+                            <td class="px-4 py-2 text-sm">{{ $data->email }}</td>
+                            <td class="px-4 py-2 text-sm">{{ $data->no_wa }}</td>
+                            <td class="px-4 py-2 text-center">
+                                @if ($data->status_checkin)
+                                    <span class="inline-flex items-center px-2 py-1 text-sm font-semibold text-green-800 bg-green-100 rounded-full">✅</span>
+                                @else
+                                    <span class="inline-flex items-center px-2 py-1 text-sm font-semibold text-red-800 bg-red-100 rounded-full">❌</span>
+                                @endif
+                            </td>
+                            <td class="px-4 py-2 text-center text-sm">
+                                {{ $data->nomor_undian ?? '-' }}
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="8" class="text-center py-6 text-gray-500">Belum ada peserta terdaftar</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
     </div>
+</div>
+
 </form>
 
 {{-- Script --}}
