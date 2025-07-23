@@ -34,7 +34,7 @@
         </table>
 
         <!-- Scrollable body -->
-        <div class="max-h-[500px] overflow-y-auto">
+        <div class="max-h-[700px] overflow-y-auto">
             <table class="min-w-full divide-y divide-gray-200">
                 <tbody class="bg-white divide-y divide-gray-100">
                     @forelse ($peserta as $index => $data)
