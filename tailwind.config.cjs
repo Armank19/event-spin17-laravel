@@ -1,3 +1,4 @@
+// tailwind.config.cjs
 module.exports = {
   content: [
     './resources/**/*.blade.php',
@@ -6,9 +7,8 @@ module.exports = {
   ],
   theme: {
     extend: {},
+  },
   plugins: [
-  require("tailwindcss-animate"),
-  ], }
-
-  
-}
+    require('tailwindcss-animate'),
+  ],
+};
