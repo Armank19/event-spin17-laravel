@@ -22,7 +22,15 @@
 
 
 </head>
-{{-- Alert Box --}}
+
+
+<body class="relative min-h-screen flex items-center justify-center p-4 bg-cover bg-center" style="background-image: url('/images/bg17an.jpg');">
+
+  <div class="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
+
+  <div class="relative z-10 w-full max-w-md bg-white p-6 rounded-2xl shadow-2xl border-2 border-red-200">
+      
+  {{-- Alert Box --}}
 <div id="alertBox" class="bg-yellow-100 border border-yellow-400 text-yellow-800 px-6 py-4 rounded relative mb-6 shadow-md">
     <strong class="font-bold">⚠️ Perhatian:</strong>
     <span class="block sm:inline ml-2">Silakan screenshot atau foto kupon Anda untuk tiket check-in onsite.</span>
@@ -31,13 +39,6 @@
         Mengerti
     </button>
 </div>
-
-<body class="relative min-h-screen flex items-center justify-center p-4 bg-cover bg-center" style="background-image: url('/images/bg17an.jpg');">
-
-  <div class="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
-
-  <div class="relative z-10 w-full max-w-md bg-white p-6 rounded-2xl shadow-2xl border-2 border-red-200">
-  
 
   <div class="w-full max-w-md bg-white p-6 rounded-2xl shadow-2xl border-2 border-red-200">
     <h1 class="text-3xl font-bold text-center text-red-700 mb-4">Pendaftaran Acara 17 Agustus 2025</h1>
