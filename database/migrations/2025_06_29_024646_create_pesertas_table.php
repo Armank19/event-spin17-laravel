@@ -18,7 +18,7 @@ return new class extends Migration
         $table->string('email')->nullable();
         $table->string('no_wa')->nullable();
         $table->boolean('status_checkin')->default(false);
-        $table->integer('nomor_undian')->nullable();
+        $table->integer('nomor_undian', 20)->nullable();
         $table->timestamps();
     });
 }
