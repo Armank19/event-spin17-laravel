@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
+import { defineConfig } from 'vite'
+import laravel from 'laravel-vite-plugin'
 
 export default defineConfig({
     plugins: [
@@ -8,14 +8,4 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-    build: {
-        manifest: true,
-        outDir: 'public/build',
-        rollupOptions: {
-            input: {
-                app: 'resources/js/app.js',
-                style: 'resources/css/app.css',
-            },
-        },
-    },
-});
+})
